@@ -9,46 +9,52 @@
             Console.WriteLine();
 
             Console.WriteLine("ingrese el primer numero a utilizar");
-            int N1 = Convert.ToInt32(Console.ReadLine());
+            double N1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Ingrese el operador (+, -, *, /): ");
-            char Operador = Console.ReadKey().KeyChar;
+            Console.WriteLine("Seleccione la opcion qeu desea");
+            Console.WriteLine();
+            Console.WriteLine("1. Multiplicar");
+            Console.WriteLine("2. Sumar");
+            Console.WriteLine("3. Dividir");
+            Console.WriteLine("4. Restar");
+            int Operador = Convert.ToInt32(Console.ReadLine()); 
             Console.WriteLine();
 
             Console.WriteLine("ingrese el segundo numero");
-            int N2 = Convert.ToInt32(Console.ReadLine());
+            double N2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine() ;
 
             double Total;
 
-            switch (Operador)
+            if (Operador == 1)
             {
-                case '+':
-                    Total = N1 + N2;
-                    break;
-                case '-':
-                    Total = N1 - N2;
-                    break;
-                case '*':
-                    Total = N1 * N2;
-                    break;
-                case '/':
-                    // Manejo de división por cero
-                    if (N2 == 0)
-                    {
-                        Console.WriteLine("Error: División por cero no permitida.");
-                        return;
-                    }
-                    Total = N1 / N2;
-                    break;
-                default:
-                    Console.WriteLine("Operador no válido.");
-                    return;
+                double Multiplicacion = (N1 * N2);
+                Console.WriteLine($"La Multiplicacion de {N1} y {N2} es : {Multiplicacion}");
             }
-            Console.WriteLine($" El resultado de {N1} {Operador} {N2} es : {Total} ");
+            if (Operador == 2)
+            {
+                double Suma = (N1 + N2);
+                Console.WriteLine($"La Suma de {N1} y {N2} es : {Suma}");
+            }
+            if (Operador == 3)
+            {
+                if (N1 == 0)           
+                {
+                    Console.WriteLine("No es posible dividir entre cero");
+                }
+                else {
+                    double Divicion = (N1 / N2);
+                    Console.WriteLine($"La Divicion de {N1} y {N2} es : {Divicion}");
+                }
+            }
+            if (Operador == 4)
+            {
+               
+                double Resta = (N1 - N2);
+                Console.WriteLine($"La Resta de {N1} y {N2} es : {Resta}");
+            }
+
             Console.ReadKey();
         }
-       
     }
-
 } 
